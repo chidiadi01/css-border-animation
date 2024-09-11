@@ -1,0 +1,104 @@
+/*   Created by CHIDIADI ANYANWU
+     11th September, 2024
+     Just a simple example of a moving border animation in CSS.
+*/
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: black;
+}
+.box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #131212;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box::before{
+    content: "";
+    position: absolute;
+    height: 102%;
+    width: 102%;
+    border-radius: 10px;
+    z-index: -1;
+    background: radial-gradient(circle at var(--left) var(--top),#f323d0, #212121 35%);
+    animation: border-animation 2s ease-in-out infinite;
+}
+@keyframes border-animation {
+    0%{
+        --left: 0%;
+        --top:0%;
+    }
+    6.25%{
+        --left: 25%;
+        --top:0%;
+    }
+    12.5%{
+        --left: 50%;
+        --top:0%;
+    }
+    18.75%{
+        --left: 75%;
+        --top:0%;
+    }
+    25%{
+        --left: 100%;
+        --top:0%;
+    }
+    31.25%{
+        --left: 100%;
+        --top:25%;
+    }
+    37.5%{
+        --left: 100%;
+        --top:50%;
+    }   
+    43.75%{
+        --left: 100%;
+        --top:75%;
+    }
+    50%{
+        --left: 100%;
+        --top:100%;
+    }
+    56.25%{
+        --left: 75%;
+        --top:100%;
+    }
+    62.5%{
+        --left: 50%;
+        --top:100%;
+    }
+    68.75%{
+        --left: 25%;
+        --top:100%;
+    }
+    75%{
+        --left: 0%;
+        --top:100%;
+    }
+    81.25%{
+        --left: 0%;
+        --top:75%;
+    }
+    87.5%{
+        --left: 0%;
+        --top:50%;
+    }
+    93.75%{
+        --left: 0%;
+        --top:25%;
+    }
+    100%{
+        --left: 0%;
+        --top:0%;
+    }
+}
+
